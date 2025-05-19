@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.Metrics;
-
-namespace In_Ref_Out
+﻿namespace In_Ref_Out_None
 {
     internal class Program
     {
