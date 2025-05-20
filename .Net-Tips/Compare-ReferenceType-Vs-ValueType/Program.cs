@@ -34,7 +34,9 @@
         }
     }
 
-    public abstract class Base
+    public interface InterfaceCustom { }
+
+    public abstract class Base : InterfaceCustom
     {
 
     }
@@ -55,8 +57,14 @@
     }
 
 
+    public struct BaseStruct : InterfaceCustom
+    {
 
-    public struct BaseStruct
+    }
+
+
+    // Structs cannot inherit from classes, but they can implement interfaces.
+    public struct BaseStructCustom : Base, BaseStruct
     {
 
     }
