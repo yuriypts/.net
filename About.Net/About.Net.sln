@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Quiz-Knowledge", "Quiz-Know
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reverse a Large Array Efficiently Using Span", "..\Quiz-Knowledge\Reverse a Large Array Efficiently Using Span\Reverse a Large Array Efficiently Using Span.csproj", "{62798CF0-F341-4C3E-A70C-F3D5CBB9E035}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thread Pool optimization", "..\Quiz-Knowledge\Thread Pool optimization\Thread Pool optimization.csproj", "{2DE12F11-CCAF-4006-8CFD-EC68495DA838}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{62798CF0-F341-4C3E-A70C-F3D5CBB9E035}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62798CF0-F341-4C3E-A70C-F3D5CBB9E035}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62798CF0-F341-4C3E-A70C-F3D5CBB9E035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DE12F11-CCAF-4006-8CFD-EC68495DA838}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DE12F11-CCAF-4006-8CFD-EC68495DA838}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DE12F11-CCAF-4006-8CFD-EC68495DA838}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DE12F11-CCAF-4006-8CFD-EC68495DA838}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +51,7 @@ Global
 		{7F517256-E126-4917-990D-4074ECCB443E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{F80825C5-3FE8-4EE3-92B3-5923A9989A9A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{62798CF0-F341-4C3E-A70C-F3D5CBB9E035} = {F91463DC-F6C0-4E27-B24B-12C13C6D8719}
+		{2DE12F11-CCAF-4006-8CFD-EC68495DA838} = {F91463DC-F6C0-4E27-B24B-12C13C6D8719}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CEC8A9FD-93DE-4795-A19A-BEE95AA6E23A}
