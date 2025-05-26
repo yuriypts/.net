@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "In_Ref_Out_None", "..\.Net-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compare-ReferenceType-Vs-ValueType", "..\.Net-Tips\Compare-ReferenceType-Vs-ValueType\Compare-ReferenceType-Vs-ValueType.csproj", "{F80825C5-3FE8-4EE3-92B3-5923A9989A9A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Quiz-Knowledge", "Quiz-Knowledge", "{F91463DC-F6C0-4E27-B24B-12C13C6D8719}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reverse a Large Array Efficiently Using Span", "..\Quiz-Knowledge\Reverse a Large Array Efficiently Using Span\Reverse a Large Array Efficiently Using Span.csproj", "{62798CF0-F341-4C3E-A70C-F3D5CBB9E035}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,10 @@ Global
 		{F80825C5-3FE8-4EE3-92B3-5923A9989A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F80825C5-3FE8-4EE3-92B3-5923A9989A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F80825C5-3FE8-4EE3-92B3-5923A9989A9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62798CF0-F341-4C3E-A70C-F3D5CBB9E035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62798CF0-F341-4C3E-A70C-F3D5CBB9E035}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62798CF0-F341-4C3E-A70C-F3D5CBB9E035}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62798CF0-F341-4C3E-A70C-F3D5CBB9E035}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +44,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{7F517256-E126-4917-990D-4074ECCB443E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{F80825C5-3FE8-4EE3-92B3-5923A9989A9A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{62798CF0-F341-4C3E-A70C-F3D5CBB9E035} = {F91463DC-F6C0-4E27-B24B-12C13C6D8719}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CEC8A9FD-93DE-4795-A19A-BEE95AA6E23A}
