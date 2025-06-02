@@ -6,7 +6,7 @@
         {
             Console.WriteLine("Start");
 
-            CustomTask.RunTaskAsync(ShowResult);
+            CustomTask.RunTaskAsync(ShowResult1);
 
             Console.WriteLine("End");
         }
@@ -16,6 +16,13 @@
             Console.WriteLine("Result from async method");
 
             return "Hello from ShowResult!";
+        }
+
+        static int ShowResult1()
+        {
+            Console.WriteLine("Result from async method");
+
+            return 1;
         }
     }
 
