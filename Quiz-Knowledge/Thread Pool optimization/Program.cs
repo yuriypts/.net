@@ -6,37 +6,53 @@
         {
             Console.WriteLine("Start");
 
-            CustomTask.RunTaskAsync(ShowResult1);
+            await CustomTask.Run(ShowResultAsync);
+            await Task.Run(ShowResultAsync);
+            
+            CustomTask.Run(ShowResult);
+            Task.Run(ShowResult);
+
+            Thread thread = new(ShowResultThread);
+            thread.Start("Thread"); 
+
+            Thread.Sleep(2000);
 
             Console.WriteLine("End");
+            Console.WriteLine("More End");
         }
 
-        static string ShowResult()
+        static string ShowResultAsync()
         {
             Console.WriteLine("Result from async method");
 
             return "Hello from ShowResult!";
         }
 
-        static int ShowResult1()
+        static int ShowResult()
         {
-            Console.WriteLine("Result from async method");
+            Console.WriteLine("Result from non-async method");
 
             return 1;
+        }
+
+        static void ShowResultThread(object test)
+        {
+            Console.WriteLine("Result from thread method - {0}", test);
+            Thread.Sleep(3000);
         }
     }
 
     public class CustomTask
     {
-        public static Task<Output> RunTaskAsync<Output>(Func<Output> action)
+        public static Task<TResult> Run<TResult>(Func<TResult> function)
         {
-            var tcs = new TaskCompletionSource<Output>();
+            var tcs = new TaskCompletionSource<TResult>();
 
             ThreadPool.QueueUserWorkItem(_ =>
             {
                 try
                 {
-                    var result = action(); // Execute the action with default value of T
+                    var result = function(); // Execute the action with default value of T
                     tcs.SetResult(result); // Indicate that the task completed successfully
                 }
                 catch (Exception ex)
