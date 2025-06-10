@@ -6,3 +6,8 @@
 		"wsl --update"
 	- (Set WSL 2 as your default version) Open PowerShell as Administrator and run this command to set WSL 2 as the default version when installing a new Linux distribution:
 		"wsl --set-default-version 2"
+	- Turn on Windows Features
+	  ".Net Framework 3.5"
+	  "Hyper-V"
+	  "Virtual Machine Platform"
+	  "Windows Subsystem for Linux"
