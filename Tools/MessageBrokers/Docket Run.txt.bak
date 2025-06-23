@@ -4,5 +4,5 @@
  --hostname: server name that RabbitMq will have
  --name: docker container name (optionaly)
  -p: port 8080:15672 (8080 port for computer, 15672 port inside container)
- -p: port 5672:5672 (for queue - map  internal port to the external port (localhost - not external network) on the machine)
+ -p: port 5672:5672 (for quoue - map  internal port to the external port (localhost - not external network) on the machine)
  -rabbitmq:3-management - imaage to build or run this container (with management systems already installed in it)
