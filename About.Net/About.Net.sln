@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitReceiver1", "..\Tools
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitReceiver2", "..\Tools\MessageBrokers\RabbitReceiver2\RabbitReceiver2.csproj", "{701491A7-8875-4AE2-AC0C-2603AD6E339F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Execution_In_LINQ", "..\.Net-Tips\Execution_In_LINQ\Execution_In_LINQ.csproj", "{E8DBDAED-0FA3-4066-B008-83A2DA4778D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{701491A7-8875-4AE2-AC0C-2603AD6E339F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{701491A7-8875-4AE2-AC0C-2603AD6E339F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{701491A7-8875-4AE2-AC0C-2603AD6E339F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8DBDAED-0FA3-4066-B008-83A2DA4778D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8DBDAED-0FA3-4066-B008-83A2DA4778D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8DBDAED-0FA3-4066-B008-83A2DA4778D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8DBDAED-0FA3-4066-B008-83A2DA4778D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +91,7 @@ Global
 		{52984527-539D-45EE-8378-0091B2F1D406} = {FEFF03BC-0F71-4820-92FB-298CA1A45F14}
 		{1A235068-B5D6-41FA-BCFE-BE1E21A70E56} = {FEFF03BC-0F71-4820-92FB-298CA1A45F14}
 		{701491A7-8875-4AE2-AC0C-2603AD6E339F} = {FEFF03BC-0F71-4820-92FB-298CA1A45F14}
+		{E8DBDAED-0FA3-4066-B008-83A2DA4778D2} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CEC8A9FD-93DE-4795-A19A-BEE95AA6E23A}
