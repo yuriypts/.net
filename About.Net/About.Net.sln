@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Execution_In_LINQ", "..\.Ne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Closure", "..\.Net-Tips\Closure\Closure.csproj", "{69764C76-D885-4306-ADFD-F6923D7074C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomDependencyInjection", "..\.Net-Tips\CustomDependencyInjection\CustomDependencyInjection.csproj", "{030F002C-CF3E-450A-A81F-A88F6BA8C9E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{69764C76-D885-4306-ADFD-F6923D7074C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69764C76-D885-4306-ADFD-F6923D7074C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69764C76-D885-4306-ADFD-F6923D7074C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{030F002C-CF3E-450A-A81F-A88F6BA8C9E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{030F002C-CF3E-450A-A81F-A88F6BA8C9E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{030F002C-CF3E-450A-A81F-A88F6BA8C9E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{030F002C-CF3E-450A-A81F-A88F6BA8C9E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,6 +105,7 @@ Global
 		{701491A7-8875-4AE2-AC0C-2603AD6E339F} = {FEFF03BC-0F71-4820-92FB-298CA1A45F14}
 		{E8DBDAED-0FA3-4066-B008-83A2DA4778D2} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{69764C76-D885-4306-ADFD-F6923D7074C7} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{030F002C-CF3E-450A-A81F-A88F6BA8C9E4} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CEC8A9FD-93DE-4795-A19A-BEE95AA6E23A}
