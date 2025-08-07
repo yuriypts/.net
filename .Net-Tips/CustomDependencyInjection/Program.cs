@@ -27,10 +27,10 @@ namespace CustomDependencyInjection
     {
         static async Task Main(string[] args)
         {
-            var log = new LogClass();
-            var dbConnection = new DbConnection(log);
-            Base baseClass = new(log, dbConnection);
-            baseClass.Show();
+            //var log = new LogClass();
+            //var dbConnection = new DbConnection(log);
+            //Base baseCustomClass = new(log, dbConnection);
+            //baseCustomClass.Show();
 
 
             ServiceCollection services = new();
@@ -39,11 +39,16 @@ namespace CustomDependencyInjection
             services.AddScoped<DbConnection>();
             using ServiceProvider provider = services.BuildServiceProvider();
 
-            //using (var scope = provider.CreateScope())
-            //{
-            //    var baseService = scope.ServiceProvider.GetRequiredService<Base>();
-            //    baseService.Show();
-            //}
+            using (var scope = provider.CreateScope())
+            {
+                var baseService = scope.ServiceProvider.GetRequiredService<Base>();
+                baseService.Show();
+            }
+
+            Console.WriteLine(new string('-', 50));
+
+            Base baseClass = provider.GetRequiredService<Base>()!;
+            baseClass.Show();
 
             // The code below, following the IoC pattern, is typically only aware of the IMessageWriter interface, not the implementation.
             //DbConnection dbConnection = provider.GetRequiredService<DbConnection>()!;
@@ -72,7 +77,7 @@ namespace CustomDependencyInjection
             //await using (var b = new BAs())
             //{ }
 
-            //baseClass.Show();
+
         }
     }
 }

@@ -2,6 +2,8 @@
 
 public class Base
 {
+    private Guid _guid;
+
     private readonly ILogClass _logClass;
     private readonly DbConnection _dbConnection;
 
@@ -11,11 +13,13 @@ public class Base
     {
         _logClass = logClass;
         _dbConnection = dbConnection;
+        _guid = Guid.NewGuid();
     }
 
     public void Show()
     {
         Console.WriteLine("Base");
+        Console.WriteLine($"Base Guid - {_guid}");
         _logClass.Log();
 
         _dbConnection.Close();
