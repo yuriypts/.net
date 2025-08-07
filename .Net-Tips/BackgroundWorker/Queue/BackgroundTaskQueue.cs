@@ -1,9 +1,23 @@
-﻿using System.Threading.Channels;
+﻿using System;
+using System.Diagnostics.Metrics;
+using System.Reflection.Metadata;
+using System.Threading;
+using System.Threading.Channels;
+using static System.Net.WebRequestMethods;
 
 namespace BackgroundWorker.Queue;
 
+/// <summary>
+/// BackgroundTaskQueue is a custom implementation of a task queue, designed to:
+//  Queue up long-running or non-critical tasks
+//  Run them in the background, separate from the HTTP request lifecycle
+//  Avoid blocking the main request thread
+//  Ensure execution even after the API request finishes
+//  Safely handle cancellation and shutdown
+/// </summary>
 public class BackgroundTaskQueue
 {
+    // Thread-safe Channel<T> to hold tasks
     private readonly Channel<Func<CancellationToken, Task>> _queue;
 
     public BackgroundTaskQueue()
