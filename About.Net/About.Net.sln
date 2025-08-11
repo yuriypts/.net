@@ -37,6 +37,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomDependencyInjection",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundWorker", "..\.Net-Tips\BackgroundWorker\BackgroundWorker.csproj", "{CA8F3D26-CE93-40CC-8A9C-4295538C8F84}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ORMs", "ORMs", "{59C89DEB-DD80-4E66-8211-F074ACB513BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestNHibernate", "..\ORMs\TestNHibernate\TestNHibernate.csproj", "{AF5EAF95-3302-4DE6-A93D-D35FB1E8A9B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +99,10 @@ Global
 		{CA8F3D26-CE93-40CC-8A9C-4295538C8F84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA8F3D26-CE93-40CC-8A9C-4295538C8F84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA8F3D26-CE93-40CC-8A9C-4295538C8F84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF5EAF95-3302-4DE6-A93D-D35FB1E8A9B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF5EAF95-3302-4DE6-A93D-D35FB1E8A9B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF5EAF95-3302-4DE6-A93D-D35FB1E8A9B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF5EAF95-3302-4DE6-A93D-D35FB1E8A9B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,6 +121,7 @@ Global
 		{69764C76-D885-4306-ADFD-F6923D7074C7} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{030F002C-CF3E-450A-A81F-A88F6BA8C9E4} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{CA8F3D26-CE93-40CC-8A9C-4295538C8F84} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{AF5EAF95-3302-4DE6-A93D-D35FB1E8A9B8} = {59C89DEB-DD80-4E66-8211-F074ACB513BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CEC8A9FD-93DE-4795-A19A-BEE95AA6E23A}
