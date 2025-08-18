@@ -29,19 +29,19 @@ internal class Program
         await channel.QueueDeclareAsync(queueName, durable: false, exclusive: false, autoDelete: false);
         await channel.QueueBindAsync(queueName, exchangeName, routingKey);
 
-        for (int i = 0; i < 30; i++)
-        {
-            byte[] messageBytes = Encoding.UTF8.GetBytes($"Message {i + 1}");
+        //for (int i = 0; i < 30; i++)
+        //{
+        //    byte[] messageBytes = Encoding.UTF8.GetBytes($"Message {i + 1}");
 
-            // Publish the message to the exchange with the specified routing key
-            await channel.BasicPublishAsync(exchangeName, routingKey, messageBytes);
-            
-            Console.WriteLine($"Sent: Message {i + 1}");
-            Thread.Sleep(1000); // Simulate some delay between messages
-        }
-        
-        //byte[] messageBytes = Encoding.UTF8.GetBytes("Hello, RabbitMQ!");
-        //await channel.BasicPublishAsync(exchangeName, routingKey, messageBytes);
+        //    // Publish the message to the exchange with the specified routing key
+        //    await channel.BasicPublishAsync(exchangeName, routingKey, messageBytes);
+
+        //    Console.WriteLine($"Sent: Message {i + 1}");
+        //    Thread.Sleep(1000); // Simulate some delay between messages
+        //}
+
+        byte[] messageBytes = Encoding.UTF8.GetBytes("Hello, RabbitMQ!");
+        await channel.BasicPublishAsync(exchangeName, routingKey, messageBytes);
 
         await channel.CloseAsync();
         await connection.CloseAsync();
