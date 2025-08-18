@@ -21,13 +21,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lock", "..\.Net-Tips\Lock\L
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{8A48130B-E9BC-471B-9BBC-34A66FD7F1F7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessageBrokers", "MessageBrokers", "{FEFF03BC-0F71-4820-92FB-298CA1A45F14}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Queue MessageBrokers (Advanced Message Queuing Protocol)", "Queue MessageBrokers (Advanced Message Queuing Protocol)", "{FEFF03BC-0F71-4820-92FB-298CA1A45F14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitSender", "..\Tools\MessageBrokers\RabbitSender\RabbitSender.csproj", "{52984527-539D-45EE-8378-0091B2F1D406}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitSender", "..\Tools\Queue MessageBrokers (Advanced Message Queuing Protocol)\RabbitSender\RabbitSender.csproj", "{52984527-539D-45EE-8378-0091B2F1D406}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitReceiver1", "..\Tools\MessageBrokers\RabbitReceiver1\RabbitReceiver1.csproj", "{1A235068-B5D6-41FA-BCFE-BE1E21A70E56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitReceiver1", "..\Tools\Queue MessageBrokers (Advanced Message Queuing Protocol)\RabbitReceiver1\RabbitReceiver1.csproj", "{1A235068-B5D6-41FA-BCFE-BE1E21A70E56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitReceiver2", "..\Tools\MessageBrokers\RabbitReceiver2\RabbitReceiver2.csproj", "{701491A7-8875-4AE2-AC0C-2603AD6E339F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitReceiver2", "..\Tools\Queue MessageBrokers (Advanced Message Queuing Protocol)\RabbitReceiver2\RabbitReceiver2.csproj", "{701491A7-8875-4AE2-AC0C-2603AD6E339F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Execution_In_LINQ", "..\.Net-Tips\Execution_In_LINQ\Execution_In_LINQ.csproj", "{E8DBDAED-0FA3-4066-B008-83A2DA4778D2}"
 EndProject
