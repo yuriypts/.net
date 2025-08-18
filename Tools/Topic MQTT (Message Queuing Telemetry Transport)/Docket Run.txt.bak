@@ -1,0 +1,16 @@
+ Create Solace Container: docker run -d --hostname sl -p 55555:55555 -p 8008:8008 --name=solace solace/solace-pubsub-standard
+ 
+ docker run -d --hostname sl --name rabbit-server -p 8080:15672 -p 55555:55555 rabbitmq:3-management
+ docker run -it -d --name mosquitto-broker -p 1883:1883 -p 9001:9001 eclipse-mosquitto
+ docker run -it -d --name mosquitto-broker allow_anonymous true -p 1883:1883 -p 9001:9001 eclipse-mosquitto 
+ docker run -it -p 1883:1883 -v mosquitto.conf eclipse-mosquitto
+ 
+ 
+ docker run -it -d --name mosquitto-broker -p 1883:1883 -p 9001:9001 -v mosquitto.conf eclipse-mosquitto
+ 
+ -d: run in disconnected mode (we can close terminal)
+ --hostname: server name that Solace will have
+ --name: docker container name (optionaly)
+ -p: port 1883:1883 (1883 port for computer, 1883 port inside container)
+ -p: port 55555:55555 (for queue - map  internal port to the external port (localhost - not external network) on the machine)
+ -solace/solace-pubsub-standard - imaage to build or run this container (with management systems already installed in it)
