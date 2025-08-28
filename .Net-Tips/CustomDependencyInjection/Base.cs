@@ -20,6 +20,7 @@ public class Base
     {
         Console.WriteLine("Base");
         Console.WriteLine($"Base Guid - {_guid}");
+
         _logClass.Log();
 
         _dbConnection.Close();

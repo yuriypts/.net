@@ -28,15 +28,16 @@ namespace CustomDependencyInjection
         static async Task Main(string[] args)
         {
             //var log = new LogClass();
+            //var serilogLogClass = new SerilogLogClass();
             //var dbConnection = new DbConnection(log);
-            //Base baseCustomClass = new(log, dbConnection);
+            //Base baseCustomClass = new(serilogLogClass, dbConnection);
             //baseCustomClass.Show();
 
 
             ServiceCollection services = new();
             services.AddTransient<Base>();
             services.AddSingleton<ILogClass, SerilogLogClass>();
-            services.AddScoped<DbConnection>();
+            services.AddTransient<DbConnection>();
             using ServiceProvider provider = services.BuildServiceProvider();
 
             using (var scope = provider.CreateScope())
@@ -65,8 +66,18 @@ namespace CustomDependencyInjection
             //    scope11.Dispose();
             //}
 
-            //using (var b = new B())
-            //{ }
+            using (var b = new B())
+            { }
+
+            var b1 = new B();
+            try
+            {
+                // Some code that might throw an exception
+            }
+            catch (Exception)
+            {
+                b1.Dispose();
+            }
 
             //using (var scope = provider.CreateAsyncScope())
             //{
@@ -76,8 +87,6 @@ namespace CustomDependencyInjection
 
             //await using (var b = new BAs())
             //{ }
-
-
         }
     }
 }

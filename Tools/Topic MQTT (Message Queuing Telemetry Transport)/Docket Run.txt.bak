@@ -12,5 +12,8 @@
  --hostname: server name that Solace will have
  --name: docker container name (optionaly)
  -p: port 1883:1883 (1883 port for computer, 1883 port inside container)
- -p: port 55555:55555 (for queue - map  internal port to the external port (localhost - not external network) on the machine)
+ -p: port 9001:9001 (for queue - map  internal port to the external port (localhost - not external network) on the machine)
  -solace/solace-pubsub-standard - imaage to build or run this container (with management systems already installed in it)
+ 
+ 
+An alternative approach - https://test.mosquitto.org/ (Broker, 1883 Port)
