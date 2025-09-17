@@ -5,27 +5,27 @@ namespace TestMigrationsEntityFramework
     {
         public static void Main(string[] args)
         {
-            //var builder = WebApplication.CreateBuilder(args);
+            var builder = WebApplication.CreateBuilder(args);
 
             //builder.Services.AddScoped<INHibernateSessionFactory, NHibernateSessionFactory>();
             //builder.Services.AddTransient<IRecordRepository, RecordRepository>();
             //builder.Services.AddScoped<IRecordService, RecordService>();
 
-            //// Add services to the container.
-            //builder.Services.AddAuthorization();
+            // Add services to the container.
+            builder.Services.AddAuthorization();
 
-            //// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            //builder.Services.AddEndpointsApiExplorer();
-            //builder.Services.AddSwaggerGen();
+            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
 
-            //var app = builder.Build();
+            var app = builder.Build();
 
-            //app.UseSwagger();
-            //app.UseSwaggerUI();
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
 
-            //app.UseAuthorization();
+            app.UseAuthorization();
 
             //app.MapPost("/create", (IPersonService recordService, [FromBody] Record record) =>
             //{
@@ -43,7 +43,7 @@ namespace TestMigrationsEntityFramework
             //.WithName("GetRecord")
             //.WithOpenApi();
 
-            //app.Run();
+            app.Run();
         }
     }
 }
