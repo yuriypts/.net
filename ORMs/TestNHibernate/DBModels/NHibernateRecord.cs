@@ -1,6 +1,6 @@
-﻿namespace TestNHibernate.DBModels;
+﻿namespace NHibernate_AspNetCore.DBModels;
 
-public class Record
+public class NHibernateRecord
 {
     public virtual int Id { get; set; }
     public virtual int SolidId { get; set; }

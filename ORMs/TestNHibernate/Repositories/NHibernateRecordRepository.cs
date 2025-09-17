@@ -1,22 +1,22 @@
 ﻿using NHibernate;
-using TestNHibernate.Repositories.Interfaces;
-using TestNHibernate.SessionFactory.Interfaces;
-using TestNHibernate.Shema;
+using NHibernate_AspNetCore.Repositories.Interfaces;
+using NHibernate_AspNetCore.SessionFactory.Interfaces;
+using NHibernate_AspNetCore.Shema;
 
-namespace TestNHibernate.Repositories;
+namespace NHibernate_AspNetCore.Repositories;
 
-public class RecordRepository : IRecordRepository
+public class NHibernateRecordRepository : INHibernateRecordRepository
 {
     private readonly NHibernate.ISession _session;
 
-    public RecordRepository(INHibernateSessionFactory nHibernateSessionFactory)
+    public NHibernateRecordRepository(INHibernateSessionFactory nHibernateSessionFactory)
     {
         _session = nHibernateSessionFactory.SessionFactory.OpenSession();
     }
 
-    public DBModels.Record Create(Record record)
+    public DBModels.NHibernateRecord Create(NHibernateRecord record)
     {
-        DBModels.Record dbRecord = new DBModels.Record
+        DBModels.NHibernateRecord dbRecord = new DBModels.NHibernateRecord
         {
             SolidId = record.SolidId,
             Name = record.Name
@@ -30,7 +30,7 @@ public class RecordRepository : IRecordRepository
         }
     }
 
-    public DBModels.Record Update(Record record)
+    public DBModels.NHibernateRecord Update(NHibernateRecord record)
     {
         var objToUpdate = GetBySolidId(record.Id);
 
@@ -45,9 +45,9 @@ public class RecordRepository : IRecordRepository
         }
     }
 
-    public void Delete(Record record)
+    public void Delete(NHibernateRecord record)
     {
-        var objToDelete = _session.Get<DBModels.Record>(record.Id);
+        var objToDelete = _session.Get<DBModels.NHibernateRecord>(record.Id);
         using (ITransaction transaction = _session.BeginTransaction())
         {
             _session.Delete(objToDelete);
@@ -56,9 +56,9 @@ public class RecordRepository : IRecordRepository
 
     }
 
-    public DBModels.Record? GetBySolidId(int id)
+    public DBModels.NHibernateRecord? GetBySolidId(int id)
     {
-        var result = _session.Query<DBModels.Record>().FirstOrDefault(x => x.SolidId == id);
+        var result = _session.Query<DBModels.NHibernateRecord>().FirstOrDefault(x => x.SolidId == id);
         return result;
     }
 }

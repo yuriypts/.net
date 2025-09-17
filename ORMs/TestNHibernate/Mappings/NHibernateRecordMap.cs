@@ -1,13 +1,13 @@
 ﻿using FluentNHibernate.Mapping;
-using TestNHibernate.DBModels;
+using NHibernate_AspNetCore.DBModels;
 
-namespace TestNHibernate.Mappings;
+namespace NHibernate_AspNetCore.Mappings;
 
-public class RecordMap : ClassMap<Record>
+public class NHibernateRecordMap : ClassMap<NHibernateRecord>
 {
-    public RecordMap()
+    public NHibernateRecordMap()
     {
-        Table("Record");
+        Table("NHibernateRecord");
         Id(x => x.Id).GeneratedBy.Identity().Column("Id");
         Map(x => x.SolidId).Column("SolidId").Unique().Not.Nullable();
         Map(x => x.Name).Column("Name").Nullable();

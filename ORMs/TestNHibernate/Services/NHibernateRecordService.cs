@@ -1,19 +1,19 @@
-﻿using TestNHibernate.Repositories.Interfaces;
-using TestNHibernate.Services.Interfaces;
-using TestNHibernate.Shema;
+﻿using NHibernate_AspNetCore.Repositories.Interfaces;
+using NHibernate_AspNetCore.Services.Interfaces;
+using NHibernate_AspNetCore.Shema;
 
-namespace TestNHibernate.Services;
+namespace NHibernate_AspNetCore.Services;
 
-public class RecordService : IRecordService
+public class NHibernateRecordService : INHibernateRecordService
 {
-    private readonly IRecordRepository _recordRepository;
+    private readonly INHibernateRecordRepository _recordRepository;
 
-    public RecordService(IRecordRepository recordRepository)
+    public NHibernateRecordService(INHibernateRecordRepository recordRepository)
     {
         _recordRepository = recordRepository;
     }
 
-    public Record CreateRecord(Record record)
+    public NHibernateRecord CreateRecord(NHibernateRecord record)
     {
         try
         {
@@ -21,7 +21,7 @@ public class RecordService : IRecordService
 
             var dbRecord = _recordRepository.GetBySolidId(record.SolidId);
 
-            return new Record
+            return new NHibernateRecord
             {
                 Id = dbRecord.Id,
                 SolidId = dbRecord.SolidId,
@@ -34,7 +34,7 @@ public class RecordService : IRecordService
         }
     }
 
-    public Record GetRecord(int solidId)
+    public NHibernateRecord GetRecord(int solidId)
     {
         try
         {
@@ -42,10 +42,10 @@ public class RecordService : IRecordService
 
             if (dbRecord is null)
             {
-                throw new Exception($"Record with SolidId {solidId} not found.");
+                throw new Exception($"NHibernateRecord with SolidId {solidId} not found.");
             }
 
-            return new Record
+            return new NHibernateRecord
             {
                 Id = dbRecord.Id,
                 SolidId = dbRecord.SolidId,
@@ -58,20 +58,20 @@ public class RecordService : IRecordService
         }
     }
 
-    public Record UpdateRecord(Record payloadRecord)
+    public NHibernateRecord UpdateRecord(NHibernateRecord payloadRecord)
     {
         try
         {
-            Record record = GetRecord(payloadRecord.SolidId);
+            NHibernateRecord record = GetRecord(payloadRecord.SolidId);
 
             if (record is null)
             {
-                throw new Exception($"Record with SolidId {payloadRecord.SolidId} not found.");
+                throw new Exception($"NHibernateRecord with SolidId {payloadRecord.SolidId} not found.");
             }
 
-            DBModels.Record updatedRecord = _recordRepository.Update(payloadRecord);
+            DBModels.NHibernateRecord updatedRecord = _recordRepository.Update(payloadRecord);
 
-            return new Record
+            return new NHibernateRecord
             {
                 Id = updatedRecord.Id,
                 SolidId = updatedRecord.SolidId,
@@ -88,11 +88,11 @@ public class RecordService : IRecordService
     {
         try
         {
-            Record record = GetRecord(id);
+            NHibernateRecord record = GetRecord(id);
             
             if (record is null)
             {
-                throw new Exception($"Record with SolidId {id} not found.");
+                throw new Exception($"NHibernateRecord with SolidId {id} not found.");
             }
 
             _recordRepository.Delete(record);

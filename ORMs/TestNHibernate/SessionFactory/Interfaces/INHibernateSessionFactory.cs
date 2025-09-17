@@ -1,6 +1,6 @@
 ﻿using NHibernate;
 
-namespace TestNHibernate.SessionFactory.Interfaces;
+namespace NHibernate_AspNetCore.SessionFactory.Interfaces;
 
 public interface INHibernateSessionFactory : IDisposable
 {

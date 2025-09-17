@@ -1,6 +1,6 @@
-﻿namespace TestNHibernate.Shema;
+﻿namespace NHibernate_AspNetCore.Shema;
 
-public class Record
+public class NHibernateRecord
 {
     public int Id { get; set; }
     public int SolidId { get; set; }

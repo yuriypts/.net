@@ -1,6 +1,6 @@
-﻿namespace TestNHibernate.Helpers;
+﻿namespace NHibernate_AspNetCore.Helpers;
 
 internal class DatabaseConnections
 {
-    public const string TestNHibernateConnectionString = "TestNHibernateConnectionString";
+    public const string NHibernateConnectionString = "NHibernateConnectionString";
 }

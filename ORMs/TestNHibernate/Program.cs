@@ -1,12 +1,12 @@
 
 using Microsoft.AspNetCore.Mvc;
-using TestNHibernate.Repositories;
-using TestNHibernate.Repositories.Interfaces;
-using TestNHibernate.Services;
-using TestNHibernate.Services.Interfaces;
-using TestNHibernate.SessionFactory;
-using TestNHibernate.SessionFactory.Interfaces;
-using TestNHibernate.Shema;
+using NHibernate_AspNetCore.Repositories;
+using NHibernate_AspNetCore.Repositories.Interfaces;
+using NHibernate_AspNetCore.Services;
+using NHibernate_AspNetCore.Services.Interfaces;
+using NHibernate_AspNetCore.SessionFactory;
+using NHibernate_AspNetCore.SessionFactory.Interfaces;
+using NHibernate_AspNetCore.Shema;
 
 namespace TestNHibernate
 {
@@ -17,8 +17,8 @@ namespace TestNHibernate
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddScoped<INHibernateSessionFactory, NHibernateSessionFactory>();
-            builder.Services.AddTransient<IRecordRepository, RecordRepository>();
-            builder.Services.AddScoped<IRecordService, RecordService>();
+            builder.Services.AddTransient<INHibernateRecordRepository, NHibernateRecordRepository>();
+            builder.Services.AddScoped<INHibernateRecordService, NHibernateRecordService>();
 
             // Add services to the container.
             builder.Services.AddAuthorization();
@@ -36,7 +36,7 @@ namespace TestNHibernate
 
             app.UseAuthorization();
 
-            app.MapPost("/create", (IRecordService recordService, [FromBody] Record record) =>
+            app.MapPost("/create", (INHibernateRecordService recordService, [FromBody] NHibernateRecord record) =>
             {
                 var response = recordService.CreateRecord(record);
                 return response;
@@ -44,7 +44,7 @@ namespace TestNHibernate
             .WithName("CreateRecord")
             .WithOpenApi();
 
-            app.MapGet("/{solidId}", (int solidId, IRecordService recordService) =>
+            app.MapGet("/{solidId}", (int solidId, INHibernateRecordService recordService) =>
             {
                 var response = recordService.GetRecord(solidId);
                 return response;

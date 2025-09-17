@@ -39,7 +39,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundWorker", "..\.Net
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ORMs", "ORMs", "{59C89DEB-DD80-4E66-8211-F074ACB513BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestNHibernate", "..\ORMs\TestNHibernate\TestNHibernate.csproj", "{AF5EAF95-3302-4DE6-A93D-D35FB1E8A9B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHibernate_AspNetCore", "..\ORMs\TestNHibernate\NHibernate_AspNetCore.csproj", "{AF5EAF95-3302-4DE6-A93D-D35FB1E8A9B8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Topic MQTT (Message Queuing Telemetry Transport)", "Topic MQTT (Message Queuing Telemetry Transport)", "{B5056BEC-C9D8-44CC-81AA-63007F2A659D}"
 EndProject
@@ -48,6 +48,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MQTTSender1", "..\Tools\Topic MQTT (Message Queuing Telemetry Transport)\MQTTSender1\MQTTSender1.csproj", "{670071DB-516C-4CEE-8E7F-1BB2ECDE727E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MQTTSender2", "..\Tools\Topic MQTT (Message Queuing Telemetry Transport)\MQTTSender2\MQTTSender2.csproj", "{70D5FCF0-B79A-4194-B4F8-70E120A5EDBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMigrationsEntityFramework", "..\ORMs\TestMigrationsEntityFramework\TestMigrationsEntityFramework.csproj", "{EE8F889C-1BBF-466A-97F6-A3AEA564E193}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,6 +125,10 @@ Global
 		{70D5FCF0-B79A-4194-B4F8-70E120A5EDBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70D5FCF0-B79A-4194-B4F8-70E120A5EDBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70D5FCF0-B79A-4194-B4F8-70E120A5EDBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE8F889C-1BBF-466A-97F6-A3AEA564E193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE8F889C-1BBF-466A-97F6-A3AEA564E193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE8F889C-1BBF-466A-97F6-A3AEA564E193}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE8F889C-1BBF-466A-97F6-A3AEA564E193}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -146,6 +152,7 @@ Global
 		{E8B1B4D3-9D07-4115-B9B1-6E00FE700C36} = {B5056BEC-C9D8-44CC-81AA-63007F2A659D}
 		{670071DB-516C-4CEE-8E7F-1BB2ECDE727E} = {B5056BEC-C9D8-44CC-81AA-63007F2A659D}
 		{70D5FCF0-B79A-4194-B4F8-70E120A5EDBC} = {B5056BEC-C9D8-44CC-81AA-63007F2A659D}
+		{EE8F889C-1BBF-466A-97F6-A3AEA564E193} = {59C89DEB-DD80-4E66-8211-F074ACB513BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CEC8A9FD-93DE-4795-A19A-BEE95AA6E23A}
