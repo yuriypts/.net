@@ -19,6 +19,7 @@ namespace TestMigrationsEntityFramework
             // posible multiple DBContexts
             builder.Services.AddDbContext<EntityFrameworkDBContext>((serviceProvider, options) =>
             {
+                // optional migrations assembly if needed
                 //options.UseSqlServer(builder.Configuration.GetConnectionString("EntityFrameworkDBContext"), actions => actions.MigrationsAssembly("ProjectName"));
                 options.UseSqlServer(builder.Configuration.GetConnectionString("EntityFrameworkConnectionString"));
             });

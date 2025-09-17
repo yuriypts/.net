@@ -1,11 +1,11 @@
 Notes:
  - No need real database to create a migration (based on Snapshot)
+ - No need AddDbContext (an alternative way) - dotnet ef database update --startup-project ../Project.csproj --context EntityFrameworkDBContext
 
 Commands
 dotnet ef migrations add InitialCreate
 dotnet ef migrations list
 dotnet ef database update
-
 
 
 protected override void Up(MigrationBuilder migrationBuilder)
