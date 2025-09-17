@@ -1,0 +1,7 @@
+Notes:
+ - No need real database to create a migration (based on Snapshot)
+
+Commands
+dotnet ef migrations add InitialCreate
+dotnet ef migrations list
+dotnet ef database update

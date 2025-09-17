@@ -6,7 +6,7 @@ namespace MigrationsEntityFramework_AspNetCore.DBContext;
 
 public partial class EntityFrameworkDBContext : DbContext, IEntityFrameworkDBContext
 {
-    public DbSet<EntityFrameworkRecord> EntityFrameworkRecord { get; set; } = default!;
+    public DbSet<EntityFrameworkRecord> EntityFrameworkRecords { get; set; } = default!;
 
     public EntityFrameworkDBContext()
     {
