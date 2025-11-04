@@ -14,7 +14,9 @@ public class UserBackgroundService : BackgroundService
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
+        Console.WriteLine("Started listening");
         Func<CancellationToken, Task> workItem = await _backgroundTaskQueue.DequeueAsync(stoppingToken);
+        Console.WriteLine("Listening");
 
         try
         {

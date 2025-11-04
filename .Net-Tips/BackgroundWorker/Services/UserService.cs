@@ -15,7 +15,7 @@ public class UserService
     {
         Console.WriteLine($"Processing user");
 
-        List<int> users = [1, 2, 3];
+        List<int> users = [1, 2, 3, 4];
 
         // Enqueue a background task
         _backgroundTaskQueue.QueueBackgroundWorkItem(async token =>

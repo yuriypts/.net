@@ -34,11 +34,18 @@ namespace BackgroundWorker
 
             // Register Services
             //builder.Services.AddHostedService<ClearDataBackgroundService>();
-            //builder.Services.AddHostedService<ClearDataHostedService>();
-            builder.Services.AddHostedService<UserBackgroundService>();
+            builder.Services.AddHostedService<ClearDataHostedServiceSecond>();
+            builder.Services.AddHostedService<ClearDataHostedService>();
+            //builder.Services.AddHostedService<UserBackgroundService>();
 
             builder.Services.AddSingleton<BackgroundTaskQueue>();
             builder.Services.AddScoped<UserService>();
+
+            builder.Services.Configure<HostOptions>(option =>
+            {
+                option.ServicesStartConcurrently = true;
+                option.ServicesStopConcurrently = true;
+            });
 
             // Build the host, which includes the configured services
             using IHost host = builder.Build();
@@ -66,13 +73,14 @@ namespace BackgroundWorker
                 .ConfigureServices(services =>
                 {
                     services.AddHostedService<ClearDataBackgroundService>();
+                    //services.AddHostedService<ClearDataHostedService>();
                 })
                 .Build();
             
             // Start the host
             await host.StartAsync();
             
-            await Task.Delay(1000);
+            await Task.Delay(10000);
             
             Console.WriteLine("Main finishing, stopping background service...");
 
@@ -93,8 +101,8 @@ namespace BackgroundWorker
             // Start background task
             Task backgroundTask = Task.Run(async () =>
             {
-                Console.WriteLine($"Background running at {DateTime.Now}");
                 await Task.Delay(1000); // Simulate initial delay
+                Console.WriteLine($"Background running at {DateTime.Now}");
             });
 
             await Task.Delay(2000);
