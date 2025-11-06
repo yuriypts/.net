@@ -6,6 +6,9 @@ namespace MQTTSender2
 {
     internal class Program
     {
+        const string Server = "test.mosquitto.org";
+        const int Port = 1883;
+
         static async Task Main(string[] args)
         {
             var clientId = "MQTTSender2";
@@ -14,7 +17,7 @@ namespace MQTTSender2
 
             var options = new MqttClientOptionsBuilder()
                 .WithClientId(clientId)
-                .WithTcpServer("test.mosquitto.org", 1883)
+                .WithTcpServer(Server, Port)
                 .WithCleanSession()
                 .Build();
 

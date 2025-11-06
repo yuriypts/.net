@@ -6,18 +6,19 @@ namespace MQTTPublisher
 {
     internal class Program
     {
-        const string Broker = "test.mosquitto.org";
+        const string Server = "test.mosquitto.org";
         const int Port = 1883;
 
         static async Task Main(string[] args)
         {
+            var clientId = "MQTTPublisher";
             var factory = new MqttClientFactory();
 
             using (var mqttClient = factory.CreateMqttClient())
             {
                 var options = new MqttClientOptionsBuilder()
-                    .WithClientId("publisher-client")
-                    .WithTcpServer(Broker, Port, AddressFamily.Unspecified)
+                    .WithClientId(clientId)
+                    .WithTcpServer(Server, Port, AddressFamily.Unspecified)
                     .WithCleanSession()
                     .Build();
 
