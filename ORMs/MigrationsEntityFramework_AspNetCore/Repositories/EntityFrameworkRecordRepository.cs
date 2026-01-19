@@ -55,6 +55,12 @@ public class EntityFrameworkRecordRepository : IEntityFrameworkRecordRepository
         return record;
     }
 
+    public async Task<List<DBModels.EntityFrameworkRecord>> GetAllRecords()
+    {
+        List<DBModels.EntityFrameworkRecord> records = await _dBContext.EntityFrameworkRecords.ToListAsync();
+        return records;
+    }
+
     public async Task<DBModels.EntityFrameworkRecord> Update(Schema.EntityFrameworkRecord record)
     {
         DBModels.EntityFrameworkRecord? dbRecord = await GetById(record.Id);

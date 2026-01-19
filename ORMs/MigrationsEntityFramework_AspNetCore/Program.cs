@@ -62,6 +62,14 @@ namespace TestMigrationsEntityFramework
             .WithName("GetRecord")
             .WithOpenApi();
 
+            app.MapGet("/list", (IEntityFrameworkRecordService recordService) =>
+            {
+                var response = recordService.GetRecords();
+                return response;
+            })
+            .WithName("GetRecords")
+            .WithOpenApi();
+
             app.Run();
         }
     }

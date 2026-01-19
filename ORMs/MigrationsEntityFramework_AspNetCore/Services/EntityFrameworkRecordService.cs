@@ -52,6 +52,18 @@ public class EntityFrameworkRecordService : IEntityFrameworkRecordService
         };
     }
 
+    public async Task<List<EntityFrameworkRecord>> GetRecords()
+    {
+        List<DBModels.EntityFrameworkRecord> dbRecords = await _recordRepository.GetAllRecords();
+        
+        return dbRecords.Select(dbRecord => new EntityFrameworkRecord
+        {
+            Id = dbRecord.Id,
+            SolidId = dbRecord.SolidId,
+            Name = dbRecord.Name
+        }).ToList();
+    }
+
     public async Task<EntityFrameworkRecord> UpdateRecord(EntityFrameworkRecord record)
     {
         ArgumentNullException.ThrowIfNull(record);
