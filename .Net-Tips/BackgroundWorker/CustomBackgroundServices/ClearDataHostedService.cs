@@ -15,7 +15,7 @@ public class ClearDataHostedService : IHostedService, IDisposable
             for (int i = 0; i < 5; i++)
             {
                 Console.WriteLine($"ClearDataHostedService is running for the {i + 1} time.");
-                //await Task.Delay(1000, cancellationToken); // Simulate work
+                await Task.Delay(1000, cancellationToken); // Simulate work
             }
         //}
     }

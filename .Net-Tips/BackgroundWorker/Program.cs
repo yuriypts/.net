@@ -33,9 +33,9 @@ namespace BackgroundWorker
             var builder = Host.CreateApplicationBuilder(args);
 
             // Register Services
-            //builder.Services.AddHostedService<ClearDataBackgroundService>();
-            builder.Services.AddHostedService<ClearDataHostedServiceSecond>();
-            builder.Services.AddHostedService<ClearDataHostedService>();
+            builder.Services.AddHostedService<ClearDataBackgroundService>();
+            //builder.Services.AddHostedService<ClearDataHostedServiceSecond>();
+            //builder.Services.AddHostedService<ClearDataHostedService>();
             //builder.Services.AddHostedService<UserBackgroundService>();
 
             builder.Services.AddSingleton<BackgroundTaskQueue>();
@@ -54,7 +54,7 @@ namespace BackgroundWorker
 
             IServiceProvider serviceProvider = host.Services;
             UserService userService = serviceProvider.GetRequiredService<UserService>();
-            await userService.ProcessUserAsync();
+            //await userService.ProcessUserAsync();
 
             // Run the host, which starts the background services
             await host.RunAsync();
@@ -120,7 +120,7 @@ namespace BackgroundWorker
 
             await service.StartAsync(CancellationToken.None);
 
-            await Task.Delay(3000);
+            await Task.Delay(6000);
 
             await service.StopAsync(CancellationToken.None);
         }
