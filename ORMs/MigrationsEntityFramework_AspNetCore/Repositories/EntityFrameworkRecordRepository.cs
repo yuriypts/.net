@@ -40,18 +40,12 @@ public class EntityFrameworkRecordRepository : IEntityFrameworkRecordRepository
     public async Task<DBModels.EntityFrameworkRecord>? GetBySolidId(int solidId)
     {
         DBModels.EntityFrameworkRecord? record = await _dBContext.EntityFrameworkRecords.FirstOrDefaultAsync(x => x.SolidId == solidId);
-
-        ArgumentNullException.ThrowIfNull(record);
-
         return record;
     }
 
     public async Task<DBModels.EntityFrameworkRecord>? GetById(int id)
     {
         DBModels.EntityFrameworkRecord? record = await _dBContext.EntityFrameworkRecords.FirstOrDefaultAsync(x => x.Id == id);
-        
-        ArgumentNullException.ThrowIfNull(record);
-
         return record;
     }
 
