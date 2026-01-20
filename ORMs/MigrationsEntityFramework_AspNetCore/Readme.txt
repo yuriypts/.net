@@ -74,3 +74,12 @@ A view contains rows and columns, just like a real table. The fields in a view a
 
 CREATE VIEW ViewRecord AS SELECT efr.Name FROM EntityFrameworkRecord as efr
 DROP VIEW ViewRecord
+
+
+
+Case 0 - Entity Framework from Library project
+Case 1 - revert last migration (revert to specific migration)
+Case 2 - add new table
+Case 3 - change type of existing column in the table
+Case 4 - rename table
+Case 5 - add/modify view
