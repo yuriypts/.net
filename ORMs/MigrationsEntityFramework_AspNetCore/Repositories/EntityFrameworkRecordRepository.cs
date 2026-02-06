@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using MigrationsEntityFramework_AspNetCore.DBContext.Interfaces;
 using MigrationsEntityFramework_AspNetCore.Repositories.Interfaces;
 
@@ -53,6 +54,39 @@ public class EntityFrameworkRecordRepository : IEntityFrameworkRecordRepository
     {
         List<DBModels.EntityFrameworkRecord> records = await _dBContext.EntityFrameworkRecords.ToListAsync();
         return records;
+    }
+
+    public async Task<List<DBModels.EntityFrameworkRecord>> GetAllRecordsSql()
+    {
+        //List<DBModels.EntityFrameworkRecord> records = await _dBContext.EntityFrameworkRecords.FromSql($"SELECT * FROM EntityFrameworkRecord").ToListAsync();
+
+        // slower performance, because the filtering is done in memory, not in the database
+        //List<DBModels.EntityFrameworkRecord> records = await _dBContext.EntityFrameworkRecords.FromSql($"SELECT * FROM EntityFrameworkRecord")
+        //    .Where(x => x.SolidId > 2)
+        //    .ToListAsync();
+
+        string sql = $"SELECT * FROM EntityFrameworkRecord";
+        List<DBModels.EntityFrameworkRecord> records = await _dBContext.EntityFrameworkRecords.FromSqlRaw(sql).ToListAsync();
+        return records;
+    }
+
+    public async Task<DBModels.EntityFrameworkRecord>? GetBySolidIdSql(int solidId)
+    {
+        // injection vulnerability (sql attact), do not use in production code
+        //string sql = $"SELECT * FROM EntityFrameworkRecord WHERE SolidId = {solidId}";
+        //DBModels.EntityFrameworkRecord? record = await _dBContext.EntityFrameworkRecords
+        //    .FromSqlRaw(sql)
+        //    .FirstOrDefaultAsync();
+        //return record;
+
+        SqlParameter sqlParameter = new("SolidId", solidId);
+        string sql = "SELECT * FROM EntityFrameworkRecord WHERE SolidId = @SolidId";
+
+        DBModels.EntityFrameworkRecord? record = await _dBContext.EntityFrameworkRecords
+            .FromSqlRaw(sql, sqlParameter)
+            .FirstOrDefaultAsync();
+        
+        return record;
     }
 
     public async Task<DBModels.EntityFrameworkRecord> Update(Schema.EntityFrameworkRecord record)

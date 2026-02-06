@@ -14,4 +14,7 @@ public interface IEntityFrameworkRecordRepository
     Task<DBModels.EntityFrameworkRecord>? GetById(int id);
     
     Task<List<DBModels.EntityFrameworkRecord>> GetAllRecords();
+
+    Task<List<DBModels.EntityFrameworkRecord>> GetAllRecordsSql();
+    Task<DBModels.EntityFrameworkRecord>? GetBySolidIdSql(int solidId);
 }

@@ -52,10 +52,35 @@ public class EntityFrameworkRecordService : IEntityFrameworkRecordService
         };
     }
 
+    public async Task<EntityFrameworkRecord> GetRecordSql(int id)
+    {
+        DBModels.EntityFrameworkRecord? dbRecord = await _recordRepository.GetBySolidIdSql(id);
+        ArgumentNullException.ThrowIfNull(dbRecord);
+
+        return new EntityFrameworkRecord
+        {
+            Id = dbRecord.Id,
+            SolidId = dbRecord.SolidId,
+            Name = dbRecord.Name
+        };
+    }
+
     public async Task<List<EntityFrameworkRecord>> GetRecords()
     {
         List<DBModels.EntityFrameworkRecord> dbRecords = await _recordRepository.GetAllRecords();
         
+        return dbRecords.Select(dbRecord => new EntityFrameworkRecord
+        {
+            Id = dbRecord.Id,
+            SolidId = dbRecord.SolidId,
+            Name = dbRecord.Name
+        }).ToList();
+    }
+
+    public async Task<List<EntityFrameworkRecord>> GetRecordsSql()
+    {
+        List<DBModels.EntityFrameworkRecord> dbRecords = await _recordRepository.GetAllRecordsSql();
+
         return dbRecords.Select(dbRecord => new EntityFrameworkRecord
         {
             Id = dbRecord.Id,

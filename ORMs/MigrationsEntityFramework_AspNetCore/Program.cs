@@ -62,12 +62,28 @@ namespace TestMigrationsEntityFramework
             .WithName("GetRecord")
             .WithOpenApi();
 
+            app.MapGet("/sql/{solidId}", (int solidId, IEntityFrameworkRecordService recordService) =>
+            {
+                var response = recordService.GetRecordSql(solidId);
+                return response;
+            })
+           .WithName("GetRecordSql")
+           .WithOpenApi();
+
             app.MapGet("/list", (IEntityFrameworkRecordService recordService) =>
             {
                 var response = recordService.GetRecords();
                 return response;
             })
             .WithName("GetRecords")
+            .WithOpenApi();
+
+            app.MapGet("/list-sql", (IEntityFrameworkRecordService recordService) =>
+            {
+                var response = recordService.GetRecordsSql();
+                return response;
+            })
+            .WithName("GetRecordsSql")
             .WithOpenApi();
 
             app.Run();
