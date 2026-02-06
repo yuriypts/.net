@@ -61,4 +61,10 @@ public class NHibernateRecordRepository : INHibernateRecordRepository
         var result = _session.Query<DBModels.NHibernateRecord>().FirstOrDefault(x => x.SolidId == id);
         return result;
     }
+
+    public List<DBModels.NHibernateRecord> GetRecords()
+    {
+        var result = _session.Query<DBModels.NHibernateRecord>().ToList();
+        return result;
+    }
 }

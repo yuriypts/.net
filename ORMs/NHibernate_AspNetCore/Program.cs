@@ -52,6 +52,14 @@ namespace TestNHibernate
             .WithName("GetRecord")
             .WithOpenApi();
 
+            app.MapGet("/list", (INHibernateRecordService recordService) =>
+            {
+                var response = recordService.GetRecords();
+                return response;
+            })
+           .WithName("GetRecords")
+           .WithOpenApi();
+
             app.Run();
         }
     }

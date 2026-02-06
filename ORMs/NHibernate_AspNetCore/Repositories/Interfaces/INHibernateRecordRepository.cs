@@ -11,4 +11,6 @@ public interface INHibernateRecordRepository
     void Delete(NHibernateRecord record);
 
     DBModels.NHibernateRecord? GetBySolidId(int id);
+
+    List<DBModels.NHibernateRecord> GetRecords();
 }

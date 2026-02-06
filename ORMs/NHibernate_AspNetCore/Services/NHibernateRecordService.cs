@@ -102,4 +102,22 @@ public class NHibernateRecordService : INHibernateRecordService
             throw;
         }
     }
+
+    public List<NHibernateRecord> GetRecords()
+    {
+        try
+        {
+            List<DBModels.NHibernateRecord> dbRecords = _recordRepository.GetRecords();
+            return dbRecords.Select(dbRecord => new NHibernateRecord
+            {
+                Id = dbRecord.Id,
+                SolidId = dbRecord.SolidId,
+                Name = dbRecord.Name
+            }).ToList();
+        }
+        catch (Exception ex)
+        {
+            throw;
+        }
+    }
 }

@@ -8,4 +8,5 @@ public interface INHibernateRecordService
     NHibernateRecord GetRecord(int id);
     NHibernateRecord UpdateRecord(NHibernateRecord record);
     void DeleteRecord(int id);
+    List<NHibernateRecord> GetRecords();
 }

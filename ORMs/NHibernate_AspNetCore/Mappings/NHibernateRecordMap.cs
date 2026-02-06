@@ -12,6 +12,5 @@ public class NHibernateRecordMap : ClassMap<NHibernateRecord>
         Map(x => x.SolidId).Column("SolidId").Unique().Not.Nullable();
         Map(x => x.Name).Column("Name").Nullable();
     }
-
 }
 
