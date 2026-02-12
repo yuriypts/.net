@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using MigrationsEntityFramework_AspNetCore.DBModels;
+using System.Diagnostics;
 
 namespace MigrationsEntityFramework_AspNetCore.DBContext;
 
@@ -78,6 +80,9 @@ public partial class EntityFrameworkDBContext
             //      .HasForeignKey(e => e.DriveCloudId)
             //      .HasConstraintName("FK_Person_DriveCloud");
         });
+
+        //If we want a many-to-many join table without a surrogate primary key, the correct approach is to use a composite primary key (PersonId + ChatId).
+        //We cannot have a tracked entity without a key unless you mark it as HasNoKey(), but then it becomes a keyless entity and cannot be used as a relationship table.
 
         // Case 1 - Primary Key for the join table ChatPersonRelation
         modelBuilder.Entity<ChatPersonRelation>()
