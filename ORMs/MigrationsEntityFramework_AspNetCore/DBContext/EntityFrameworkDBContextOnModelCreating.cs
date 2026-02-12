@@ -73,31 +73,35 @@ public partial class EntityFrameworkDBContext
             entity.Property(e => e.Name)
                   .HasColumnName("Name")
                   .IsRequired();
-            entity.Property(e => e.DriveCloudId)
-                  .HasColumnName("DriveCloudId")
-                  .IsRequired(false);
             //entity.HasOne(e => e.DriveCloud)
             //      .WithMany()
             //      .HasForeignKey(e => e.DriveCloudId)
             //      .HasConstraintName("FK_Person_DriveCloud");
         });
 
-        // one-to-many relationship between Person and DriveCloud
+        // Case 1 - Primary Key for the join table ChatPersonRelation
+        modelBuilder.Entity<ChatPersonRelation>()
+            .HasKey(e => e.Id);
+
+        // Case 2 - Composite Primary Key for the join table ChatPersonRelation
+        modelBuilder.Entity<ChatPersonRelation>()
+            .HasKey(x => new { x.ChatId, x.PersonId });
+
+        //one - to - many relationship between Person and DriveCloud
         modelBuilder.Entity<Person>()
             .HasOne(p => p.DriveCloud)
-            .WithMany(p => p.Persons)
-            .OnDelete(DeleteBehavior.Cascade);
+            .WithMany(p => p.Persons);
 
-        // many-to-many relationship between Person and PersonChat through ChatRelation
-        modelBuilder.Entity<ChatRelation>()
+        //many - to - many relationship between Person and PersonChat through ChatRelation
+        modelBuilder.Entity<ChatPersonRelation>()
             .HasOne(p => p.Person)
-            .WithMany(p => p.ChatRelations)
+            .WithMany(p => p.ChatPersonRelations)
             .HasForeignKey(p => p.PersonId);
 
-        modelBuilder.Entity<ChatRelation>()
-            .HasOne(p => p.PersonChat)
-            .WithMany(p => p.ChatRelations)
-            .HasForeignKey(p => p.PersonChatId);
+        modelBuilder.Entity<ChatPersonRelation>()
+            .HasOne(p => p.Chat)
+            .WithMany(p => p.ChatPersonRelations)
+            .HasForeignKey(p => p.ChatId);
 
 
         base.OnModelCreating(modelBuilder);

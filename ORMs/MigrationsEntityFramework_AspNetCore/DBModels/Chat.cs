@@ -1,9 +1,9 @@
 ﻿namespace MigrationsEntityFramework_AspNetCore.DBModels;
 
-public class PersonChat
+public class Chat
 {
     public int Id { get; set; }
     public int ChatName { get; set; }
 
-    public virtual List<ChatRelation> ChatRelations { get; set; }
+    public virtual List<ChatPersonRelation> ChatPersonRelations { get; set; }
 }

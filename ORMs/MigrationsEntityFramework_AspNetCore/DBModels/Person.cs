@@ -8,5 +8,5 @@ public class Person
     public int DriveCloudId { get; set; }
 
     public virtual DriveCloud DriveCloud { get; set; }
-    public virtual List<ChatRelation> ChatRelations { get; set; }
+    public virtual List<ChatPersonRelation> ChatPersonRelations { get; set; }
 }
