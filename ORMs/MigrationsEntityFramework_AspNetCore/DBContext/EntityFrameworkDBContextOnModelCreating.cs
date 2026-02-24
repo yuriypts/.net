@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using MigrationsEntityFramework_AspNetCore.DBModels;
-using System.Diagnostics;
 
 namespace MigrationsEntityFramework_AspNetCore.DBContext;
 
@@ -28,7 +26,7 @@ public partial class EntityFrameworkDBContext
         //    .Property(i => i.Name)
         //    .HasColumnName("Name")
         //    .IsRequired(false);
-        
+
         // Alternatively, using a more concise syntax
         modelBuilder.Entity<EntityFrameworkRecord>(entity =>
         {
