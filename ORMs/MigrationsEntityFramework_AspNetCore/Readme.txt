@@ -47,7 +47,7 @@ Commands
 dotnet ef migrations add InitialCreate
 dotnet ef migrations list
 dotnet ef database update
-dotnet ef database update {name} (revert migration)
+dotnet ef database update {name} - this will do revert migration
 
 
 protected override void Up(MigrationBuilder migrationBuilder)

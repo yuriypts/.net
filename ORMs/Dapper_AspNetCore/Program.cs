@@ -17,7 +17,6 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Register IDbConnection for DI
-        var test = builder.Configuration.GetConnectionString("DatabaseConnectionString");
         builder.Services.AddScoped<IDbConnection>(sp => new SqlConnection(builder.Configuration.GetConnectionString("DatabaseConnectionString")));
 
         builder.Services.AddScoped<IRecordRepository, RecordRepository>();
