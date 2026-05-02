@@ -1,0 +1,1 @@
+1. gRPC protofile are the way you define the contract between the client and the server. It defines the service, the methods, and the messages that are used in the communication.

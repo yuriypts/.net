@@ -1,0 +1,29 @@
+// latest version of the protocol buffers language
+syntax = "proto3"; 
+
+// The package name is used to prevent name conflicts. It should be unique.
+option csharp_namespace = "gRPCServer"; 
+
+// The package name is used to prevent name conflicts. It should be unique.
+package greet;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply);
+}
+
+// public HelloReply SayHello(HelloRequest request)
+//{
+//
+//}
+
+// The request message containing the user's name. - Send in
+message HelloRequest {
+  string name = 1; // 1 is the field number, which is used to identify the field in the binary format. It should be unique within the message.
+}
+
+// The response message containing the greetings. - Send back
+message HelloReply {
+  string message = 1; // 1 is the field number, which is used to identify the field in the binary format. It should be unique within the message.
+}
