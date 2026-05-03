@@ -1,7 +1,5 @@
 syntax = "proto3";
 
-//import "google/protobuf/empty.proto"; - import other proto files if needed
-
 option csharp_namespace = "gRPCServer";
 
 service Person
@@ -16,7 +14,6 @@ message PersonRequestModel
 {
 	int32 userId = 1;
 	// PersonResponseModel repeats = 2;
-	// map<stirng, int32> myMap = 3; // example of Dictionary<string, int>
 }
 
 message PersonListResponseModel
@@ -37,19 +34,6 @@ message  NewPersonRequestModel
 
 }
 
-
-//message PersonTest
-//{
-//	int32 id = 1;
-//
-//	message PersonInfo
-//	{
-//		string firstName = 1;
-//		string lastName = 2;
-//		string email = 3;
-//		int32 age = 4;
-//	}
-//}
 
 // Stream - Use this if the array is very large or you want to process items as they arrive. The server sends multiple independent messages instead of one giant message
 // Repeated - This is the standard way to return a list or array as a single response object. You define a message that contains a repeated field of the desired type.
