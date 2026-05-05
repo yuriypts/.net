@@ -23,6 +23,11 @@ message HelloRequest {
   string name = 1; // 1 is the field number, which is used to identify the field in the binary format. It should be unique within the message.
 }
 
+//public class HelloRequest
+//{
+//	public string Name { get; set; }
+//}
+
 // The response message containing the greetings. - Send back
 message HelloReply {
   string message = 1; // 1 is the field number, which is used to identify the field in the binary format. It should be unique within the message.

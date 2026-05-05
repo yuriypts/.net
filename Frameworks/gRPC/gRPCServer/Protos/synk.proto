@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "gRPCServer";
+
+service Synk
+{
+	rpc GetTest (TestRequestModel) returns (TestResponseModel);
+}
+
+message TestRequestModel
+{
+	int32 name = 1;
+}
+
+message TestResponseModel
+{
+	int32 id = 1;
+}
