@@ -5,32 +5,35 @@ syntax = "proto3";
 option csharp_namespace = "gRPCServer"; 
 
 // The package name is used to prevent name conflicts. It should be unique.
-package greet;
-
-//import "google/protobuf/empty.proto"; - import other proto files if needed
+//package greet;
 
 // The greeting service definition.
-service Greeter {
+service Eleks {
   // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply);
+  rpc GetIfno (InfoRequest) returns (InfoResponse);
 }
 
-// public HelloReply SayHello(HelloRequest request)
+// public InfoResponse GetIfno(InfoRequest request)
 //{
 //
 //}
 
 // The request message containing the user's name. - Send in
-message HelloRequest {
+message InfoRequest {
   string name = 1; // 1 is the field number, which is used to identify the field in the binary format. It should be unique within the message.
 }
 
-//public class HelloRequest
+//public class InfoRequest
 //{
 //	public string Name { get; set; }
 //}
 
 // The response message containing the greetings. - Send back
-message HelloReply {
+message InfoResponse {
   string message = 1; // 1 is the field number, which is used to identify the field in the binary format. It should be unique within the message.
 }
+
+//public class InfoResponse
+//{
+//	public string message { get; set; }
+//}

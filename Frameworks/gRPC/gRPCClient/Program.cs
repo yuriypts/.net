@@ -21,6 +21,17 @@ public class Program
 
         //var greeterReply = await greeterClient.SayHelloAsync(greeterInput);
         //Console.WriteLine("Greeting: " + greeterReply.Message);
+        
+        var eleksClient = new Eleks.EleksClient(channel);
+        InfoRequest infoRequest = new()
+        {
+            Name = "Eleks"
+        };
+        var eleksResponse = await eleksClient.GetIfnoAsync(infoRequest);
+
+        Console.WriteLine(eleksResponse.Message);
+
+        Console.WriteLine(new string('-', 50));
 
         var personInput = new PersonRequestModel
         {
@@ -33,7 +44,7 @@ public class Program
         Console.WriteLine("Person: " + replyPerson.Email);
         Console.WriteLine("Person: " + replyPerson.Age);
 
-        Console.WriteLine(new string('-', 50));
+        
 
         using (var call = personClient.GetStreamPersons(new NewPersonRequestModel()))
         {
