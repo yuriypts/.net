@@ -1,5 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { gql } from "apollo-angular";
+
+const AUTHORS = gql`query Query {
+
+}`;
 
 @Component({
   selector: 'app-root',
