@@ -1,6 +1,8 @@
-
 using GraphQLServer.Api.Mutations;
 using GraphQLServer.Api.Queries;
+using GraphQLServer.Api.Subscriptions;
+using GraphQLServer.DbContext;
+using Microsoft.EntityFrameworkCore;
 
 namespace GraphQLServer;
 
@@ -10,13 +12,33 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        // Use your actual DbContext type instead of the base DbContext
+        builder.Services.AddDbContext<GraphQLDbContext>((serviceProvider, options) =>
+        {
+            // optional migrations assembly if needed
+            //options.UseSqlServer(builder.Configuration.GetConnectionString("DbContextConnectionString"), actions => actions.MigrationsAssembly("ProjectName"));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DbContextConnectionString"));
+        });
+
         // Add services to the container.
         builder.Services.AddAuthorization();
 
+        // Specify the overload explicitly to resolve ambiguity
+        //builder.Services
+        //    .AddGraphQLServer()
+        //    .AddQueryType<QueryHello>()
+        //    .AddMutationType<UserMutation>();
+
         builder.Services
             .AddGraphQLServer()
-            .AddQueryType<UserQuery>()
-            .AddMutationType<UserMutation>()
+            .AddQueryType(x => x.Name("Query"))
+            .AddMutationType(x => x.Name("Mutation"))
+            .AddSubscriptionType(x => x.Name("Subscription"))
+            .AddTypeExtension<QueryHello>()
+            .AddTypeExtension<UserQuery>()
+            .AddTypeExtension<UserMutation>()
+            .AddTypeExtension<PersionSubscription>()
+            .AddInMemorySubscriptions()
             .AddProjections()
             .AddFiltering()
             .AddSorting();
