@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="card">
+    <h1>Create User</h1>
+    
+    <div class="form-group">
+      <label for="userName">User Name:</label>
+      <input 
+        id="userName"
+        type="text" 
+        class="input-field"
+        [(ngModel)]="nameMutation" 
+        (ngModelChange)="changeMutation()" 
+        placeholder="Enter user name"
+      >
+    </div>
+
+    <div class="results" *ngIf="mutationResult().data.createUser.name">
+      <h2>User Created Successfully</h2>
+      <div class="result-card">
+        <div class="result-item">
+          <span class="label">ID:</span>
+          <span class="value">{{ mutationResult().data.createUser.id }}</span>
+        </div>
+        <div class="result-item">
+          <span class="label">Name:</span>
+          <span class="value">{{ mutationResult().data.createUser.name }}</span>
+        </div>
+        <div class="result-item">
+          <span class="label">Age:</span>
+          <span class="value">{{ mutationResult().data.createUser.age }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

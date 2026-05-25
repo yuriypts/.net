@@ -4,6 +4,7 @@
 public class QueryHello
 {
     public string Hello(string name = "World") => $"Hello, {name}";
+    public int SumNumbers(int value1, int value2) => value1 + value2;
 
     public Person GetPerson()
     {

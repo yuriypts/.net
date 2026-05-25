@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="card">
+    <h1>GraphQL Query</h1>
+    
+    <div class="form-group">
+      <label for="nameInput">Name:</label>
+      <input 
+        id="nameInput"
+        type="text" 
+        class="input-field"
+        [(ngModel)]="name" 
+        placeholder="Enter name"
+      >
+    </div>
+
+    <div class="button-group">
+      <button class="btn" (click)="getHtppHello()">HttpClient Query</button>
+      <button class="btn" (click)="getApolloHello()">Apollo Query</button>
+    </div>
+
+    <div class="results" *ngIf="helloResult() && helloResult() !== 'Test'">
+      <h2>Results</h2>
+      <div class="result-card">
+        <div class="result-item">
+          <span class="label">Hello:</span>
+          <span class="value">{{ helloResult() }}</span>
+        </div>
+        <div class="result-item">
+          <span class="label">Sum:</span>
+          <span class="value">{{ sumNumbersResult() }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

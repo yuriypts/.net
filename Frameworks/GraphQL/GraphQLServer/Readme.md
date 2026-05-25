@@ -1,3 +1,8 @@
+GraphQL - is a query language for API (Application programing interface), developed by Facebook back in 2012
+uses - Facebook, GitHub, Shopify, Twitter etc...
+
+GraphQL literal - It sits in the GraphQL source text
+
 Nuget Packages: 
 
 HotChocolate.AspNetCore
@@ -21,4 +26,9 @@ It allows clients to modify data on the server, such as creating, updating, or d
 
 1. 3. Subscription: The Subscription type is used to define real-time operations in a GraphQL API.
 
-GraphQL literal - It sits in the GraphQL source text
+
+Key differences between REST and GraphQL
+ - Data fetching (strong and unique path - which return fixed data)
+ - Over-fetching and under-fetching (GraphQL allows clients to specify exactly what data they need, avoiding over-fetching and under-fetching issues common in REST APIs)
+ - Versioning (GraphQL APIs typically do not require versioning, as clients can request only the fields they need, while REST APIs often require versioning to manage changes in the API structure)
+ - Tooling and instrumentation (GraphQL provides more granular control over data fetching and can be more efficient in terms of network usage, while REST APIs may require multiple round trips to fetch related data)

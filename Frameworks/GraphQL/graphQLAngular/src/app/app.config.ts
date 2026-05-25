@@ -6,7 +6,19 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import { provideHttpClient } from '@angular/common/http';
 import { provideApollo } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
-import { InMemoryCache } from '@apollo/client';
+import { ApolloClient, InMemoryCache } from '@apollo/client/core';
+import { environment } from '../environments/environment';
+
+const createApolloClientOptions = (): ApolloClient.Options => {
+  const httpLink = inject(HttpLink);
+
+  return {
+    link: httpLink.create({
+      uri: environment.apirl,
+    }),
+    cache: new InMemoryCache(),
+  };
+};
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,15 +26,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
     provideHttpClient(),
-    provideApollo(() => {
-      const httpLink = inject(HttpLink);
-
-      return {
-        link: httpLink.create({
-          uri: '<%= endpoint %>',
-        }),
-        cache: new InMemoryCache(),
-      };
-    }),
+    provideApollo(createApolloClientOptions),
   ],
 };

@@ -12,6 +12,14 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        builder.Services.AddCors(options =>
+        {
+            options.AddDefaultPolicy(policy =>
+            {
+                policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+            });
+        });
+
         // Use your actual DbContext type instead of the base DbContext
         builder.Services.AddDbContext<GraphQLDbContext>((serviceProvider, options) =>
         {
@@ -50,6 +58,8 @@ public class Program
         app.UseAuthorization();
 
         app.MapGraphQL();
+
+        app.UseCors();
 
         app.Run();
     }
