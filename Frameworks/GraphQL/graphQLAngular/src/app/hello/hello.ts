@@ -14,9 +14,9 @@ const query = {
 };
 
 const correctQuery = `
-  query Test {
-    hello(name: "test")
-    sumNumbers(value1: 1, value2: 3)
+    query Test {
+      hello(name: "Yuriy")
+      sumNumbers(value1: 1, value2: 5)
   }
 `
 
