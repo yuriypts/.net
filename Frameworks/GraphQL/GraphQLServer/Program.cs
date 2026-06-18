@@ -29,7 +29,7 @@ public class Program
         });
 
         // Add services to the container.
-        //builder.Services.AddAuthorization();
+        builder.Services.AddAuthorization();
 
         // Specify the overload explicitly to resolve ambiguity
         //builder.Services

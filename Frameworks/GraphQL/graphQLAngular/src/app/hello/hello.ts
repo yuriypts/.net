@@ -22,9 +22,9 @@ const correctQuery = `
 
 // Apollo recommends using the gql tag to parse GraphQL queries into a document that can be sent to the server.
 const gqlQuery = gql`
-  query Test($name: String! = "Q") {
-    hello(name: $name),
-    sumNumbers(value1: 1, value2: 5)
+  query Test22($name: String! = "Q") {
+    hello(name: $name)
+    sumNumbers(value1: 20, value2: 20)
   }`;
 
 @Component({
