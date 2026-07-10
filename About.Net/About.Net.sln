@@ -65,6 +65,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GraphQL", "GraphQL", "{7288
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQLServer", "..\Frameworks\GraphQL\GraphQLServer\GraphQLServer.csproj", "{D633A9DB-D044-4E70-8A46-AA228534B429}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList", "..\.Net-Tips\LinkedList\LinkedList.csproj", "{D8B62704-D7CC-4C39-A8E2-E3477D43FFF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -159,6 +161,10 @@ Global
 		{D633A9DB-D044-4E70-8A46-AA228534B429}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D633A9DB-D044-4E70-8A46-AA228534B429}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D633A9DB-D044-4E70-8A46-AA228534B429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8B62704-D7CC-4C39-A8E2-E3477D43FFF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8B62704-D7CC-4C39-A8E2-E3477D43FFF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8B62704-D7CC-4C39-A8E2-E3477D43FFF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8B62704-D7CC-4C39-A8E2-E3477D43FFF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -189,6 +195,7 @@ Global
 		{75AD63BF-51B5-4361-8CC4-BA4504FAD787} = {23044AF5-ECCD-4A92-877A-8D7B1EF9F6F2}
 		{72883DE7-6166-40A7-A570-DA1C9939D3D7} = {F87A2352-8D52-48B4-AF72-615D4391D9F2}
 		{D633A9DB-D044-4E70-8A46-AA228534B429} = {72883DE7-6166-40A7-A570-DA1C9939D3D7}
+		{D8B62704-D7CC-4C39-A8E2-E3477D43FFF3} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CEC8A9FD-93DE-4795-A19A-BEE95AA6E23A}
