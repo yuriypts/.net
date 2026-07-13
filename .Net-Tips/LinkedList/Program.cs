@@ -18,6 +18,8 @@ internal class Program
         Console.WriteLine(new string('-', 20));
 
         linkedList.Remove(1);
+        // This line is commented out because LinkedList<T> does not have a RemoveAt method. Instead, you can use Remove to remove a specific value or manipulate nodes directly.
+        //linkedList.RemoveAt(1); 
 
         foreach (var item in linkedList)
         {
@@ -26,7 +28,7 @@ internal class Program
 
         Console.WriteLine(new string('-', 20));
 
-        var node = linkedList.Find(3);
+        var node = linkedList.Find(2);
         linkedList.AddAfter(node, 4);
 
         foreach (var item in linkedList)
