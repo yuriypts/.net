@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36109.1
+# Visual Studio Version 18
+VisualStudioVersion = 18.8.12009.203
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "About.Net", "About.Net.csproj", "{5C27B6DC-292C-4F72-9B0A-3D873DECF457}"
 EndProject
@@ -66,6 +66,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQLServer", "..\Frameworks\GraphQL\GraphQLServer\GraphQLServer.csproj", "{D633A9DB-D044-4E70-8A46-AA228534B429}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList", "..\.Net-Tips\LinkedList\LinkedList.csproj", "{D8B62704-D7CC-4C39-A8E2-E3477D43FFF3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authentication-Authorization", "Authentication-Authorization", "{7A74C893-8891-44E0-ADD2-CEF7B9BFA425}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCore.Identity-Authentication", "..\Authentication-Authorization\AspNetCore.Identity-Authentication\AspNetCore.Identity-Authentication.csproj", "{8025C524-7CC9-43EE-A784-0F305069F50D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yield", "..\.Net-Tips\Yield\Yield.csproj", "{17FA4A3E-81C0-4599-A31B-53F607B4266C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -165,6 +171,14 @@ Global
 		{D8B62704-D7CC-4C39-A8E2-E3477D43FFF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8B62704-D7CC-4C39-A8E2-E3477D43FFF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8B62704-D7CC-4C39-A8E2-E3477D43FFF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8025C524-7CC9-43EE-A784-0F305069F50D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8025C524-7CC9-43EE-A784-0F305069F50D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8025C524-7CC9-43EE-A784-0F305069F50D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8025C524-7CC9-43EE-A784-0F305069F50D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17FA4A3E-81C0-4599-A31B-53F607B4266C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17FA4A3E-81C0-4599-A31B-53F607B4266C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17FA4A3E-81C0-4599-A31B-53F607B4266C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17FA4A3E-81C0-4599-A31B-53F607B4266C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -196,6 +210,8 @@ Global
 		{72883DE7-6166-40A7-A570-DA1C9939D3D7} = {F87A2352-8D52-48B4-AF72-615D4391D9F2}
 		{D633A9DB-D044-4E70-8A46-AA228534B429} = {72883DE7-6166-40A7-A570-DA1C9939D3D7}
 		{D8B62704-D7CC-4C39-A8E2-E3477D43FFF3} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{8025C524-7CC9-43EE-A784-0F305069F50D} = {7A74C893-8891-44E0-ADD2-CEF7B9BFA425}
+		{17FA4A3E-81C0-4599-A31B-53F607B4266C} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CEC8A9FD-93DE-4795-A19A-BEE95AA6E23A}
