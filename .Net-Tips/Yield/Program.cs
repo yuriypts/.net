@@ -81,6 +81,7 @@ internal class Program
         yield return new Person { Id = 1 };
         yield return new Person { Id = 2 };
         yield return new Person { Id = 3 };
+        yield break;
         yield return new Person { Id = 4 };
     }
     
