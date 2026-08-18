@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Runtime.InteropServices;
 
 namespace Yield;
 
@@ -22,12 +23,12 @@ internal class Program
         //Console.WriteLine(new string('-', 50));
 
         //IEnumerable<int> numbersWithYield = GetNumbersWithYield();
-        ////Console.WriteLine(numbersWithYield[0]);
+        //Console.WriteLine(numbersWithYield[0]);
 
-        ////foreach (var arg in numbersWithYield)
-        ////{
-        ////    Console.WriteLine(arg);
-        ////}
+        //foreach (var arg in numbersWithYield)
+        //{
+        //    Console.WriteLine(arg);
+        //}
 
         //var enumerator = numbersWithYield.GetEnumerator();
         //while (enumerator.MoveNext())
@@ -42,22 +43,25 @@ internal class Program
         //    Console.WriteLine(person.Id);
         //}
 
-        //Console.WriteLine(new string('-', 50));
+        Console.WriteLine(new string('-', 50));
 
-        ////GetNumbers() -> iterator created -> First() -> yield return 0
-        //IEnumerable<int> numbers = GetNumbersWithYield();
+        //GetNumbers() -> iterator created -> First() -> yield return 0
+        IEnumerable<int> numbersFirst = GetNumbersWithYield();
 
-        //Console.WriteLine("Test");
+        Console.WriteLine("Test");
 
-        //var first = numbers.First();
-        //Console.WriteLine(first);
+        var first = numbersFirst.First();
+        Console.WriteLine(first);
+
+        var second = numbersFirst.Count();
+        Console.WriteLine(second);
     }
 
     private static IEnumerable<int> GetNumbersWithYield()
     {
         Console.WriteLine("Started");
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 1; i < 11; i++)
         {
              yield return i;
         }
