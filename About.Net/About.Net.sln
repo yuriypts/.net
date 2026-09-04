@@ -73,6 +73,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCore.Identity-Authent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yield", "..\.Net-Tips\Yield\Yield.csproj", "{17FA4A3E-81C0-4599-A31B-53F607B4266C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF_Eager_Lazy_Explicit_Loading", "..\.Net-Tips\EF_Eager_Lazy_Explicit_Loading\EF_Eager_Lazy_Explicit_Loading.csproj", "{0A2CB01F-1E3F-4370-A449-6D5C919CE94E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -179,6 +181,10 @@ Global
 		{17FA4A3E-81C0-4599-A31B-53F607B4266C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17FA4A3E-81C0-4599-A31B-53F607B4266C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17FA4A3E-81C0-4599-A31B-53F607B4266C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A2CB01F-1E3F-4370-A449-6D5C919CE94E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A2CB01F-1E3F-4370-A449-6D5C919CE94E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A2CB01F-1E3F-4370-A449-6D5C919CE94E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A2CB01F-1E3F-4370-A449-6D5C919CE94E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -212,6 +218,7 @@ Global
 		{D8B62704-D7CC-4C39-A8E2-E3477D43FFF3} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{8025C524-7CC9-43EE-A784-0F305069F50D} = {7A74C893-8891-44E0-ADD2-CEF7B9BFA425}
 		{17FA4A3E-81C0-4599-A31B-53F607B4266C} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{0A2CB01F-1E3F-4370-A449-6D5C919CE94E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CEC8A9FD-93DE-4795-A19A-BEE95AA6E23A}
