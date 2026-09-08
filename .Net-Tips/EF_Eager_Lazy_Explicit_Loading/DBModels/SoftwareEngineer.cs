@@ -4,5 +4,5 @@ public class SoftwareEngineer
 {
     public int Id { get; set; }
     public string Name { get; set; } = default!;
-    public virtual ICollection<Device> Devices { get; set; } = default!;
+    public virtual IEnumerable<Device> Devices { get; set; } = default!;
 }

@@ -43,7 +43,8 @@ public class SoftwareEngineerRepository : ISoftwareEngineerRepository
         // N+1 Problem: For each software engineer, we are making a separate database call to get their devices. This can lead to performance issues if there are many software engineers.
         foreach (var sf in sfs)
         {
-            sf.Devices = _dBContext.Devices.Where(x => x.SoftwareEngineerId == sf.Id).ToList();
+            //sf.Devices = _dBContext.Devices.Where(x => x.SoftwareEngineerId == sf.Id).ToList();
+            var dv = sf.Devices;
         }
 
         return sfs;
@@ -72,7 +73,10 @@ public class SoftwareEngineerRepository : ISoftwareEngineerRepository
         // Reference navigation properties are used to navigate to a single related entity, while collection navigation properties are used to navigate to a collection of related entities.
         foreach (var sf in sfs)
         {
-            _dBContext.Entry(sf).Collection(x => x.Devices).Load();
+            if (sf.Name == "Test1")
+            {
+                _dBContext.Entry(sf).Collection(x => x.Devices).Load();
+            }
         }
 
         return sfs;

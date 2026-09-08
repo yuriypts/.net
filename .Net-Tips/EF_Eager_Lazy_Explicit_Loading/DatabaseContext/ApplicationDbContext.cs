@@ -10,6 +10,13 @@ public class ApplicationDbContext : DbContext
     {
     }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder
+            .UseLazyLoadingProxies() // Enforce lazy loading proxies
+            .UseSqlServer(@"Data Source=localhost;Initial Catalog=EF_Eager_Lazy_Explicit_Loading;integrated security=SSPI;persist security info=False;Trusted_Connection=Yes;TrustServerCertificate=True;");
+    }
+
     public DbSet<SoftwareEngineer> SoftwareEngineers { get; set; } = default!;
     public DbSet<Device> Devices { get; set; } = default!;
 
