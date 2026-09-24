@@ -1,9 +1,9 @@
-
 using Microsoft.EntityFrameworkCore;
 using AspNetCore.Identity_Authentication.Database;
 using AspNetCore.Identity_Authentication.DbContext;
 using AspNetCore.Identity_Authentication.Extensions;
 using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace AspNetCore.Identity_Authentication
 {
@@ -13,37 +13,51 @@ namespace AspNetCore.Identity_Authentication
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-
             // Add services to the container.
             builder.Services.AddAuthorization();
-            builder.Services.AddAuthentication().AddCookie(IdentityConstants.ApplicationScheme);
+            builder.Services.AddAuthentication()
+                .AddCookie(IdentityConstants.ApplicationScheme)
+                .AddBearerToken(IdentityConstants.BearerScheme);
+            //builder.Services.AddAuthentication()
+            //    .AddBearerToken(IdentityConstants.BearerScheme);
+            //builder.Services.AddAuthentication()
+            //    .AddOAuth("OAuth", options => { });
+
+            builder.Services.AddControllers();
 
             builder.Services.AddIdentityCore<User>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddApiEndpoints();
+                .AddApiEndpoints(); // required services for Identity API endpoints
 
             //// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-            builder.Services.AddOpenApi();
+            //builder.Services.AddOpenApi();
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("EntityFrameworkConnectionString")));
 
-            var app = builder.Build();
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
 
-            if (app.Environment.IsDevelopment())
+            var app = builder.Build();
+           
+            app.UseSwagger();
+            app.UseSwaggerUI();
+
+
+            app.MapGet("/user", async (ClaimsPrincipal claimsPrincipal, ApplicationDbContext applicationDbContext) =>
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-                app.ApplyMigrations();
-            }
+                string userId = claimsPrincipal.Claims.First(x => x.Type == ClaimTypes.NameIdentifier).Value;
+
+                var user = await applicationDbContext.Users.FirstOrDefaultAsync(x => x.Id == userId);
+
+                return user;
+            }).RequireAuthorization();
 
             app.UseHttpsRedirection();
-
-            //app.UseAuthorization();
-
+            app.UseAuthorization();
             app.MapIdentityApi<User>();
+
+            app.MapControllers();
 
             app.Run();
         }
