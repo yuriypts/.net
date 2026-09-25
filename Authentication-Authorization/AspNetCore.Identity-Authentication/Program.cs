@@ -13,7 +13,6 @@ namespace AspNetCore.Identity_Authentication
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddAuthorization();
             builder.Services.AddAuthentication()
                 .AddCookie(IdentityConstants.ApplicationScheme)
@@ -29,9 +28,6 @@ namespace AspNetCore.Identity_Authentication
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddApiEndpoints(); // required services for Identity API endpoints
 
-            //// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-            //builder.Services.AddOpenApi();
-
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("EntityFrameworkConnectionString")));
 
@@ -42,7 +38,6 @@ namespace AspNetCore.Identity_Authentication
            
             app.UseSwagger();
             app.UseSwaggerUI();
-
 
             app.MapGet("/user", async (ClaimsPrincipal claimsPrincipal, ApplicationDbContext applicationDbContext) =>
             {
