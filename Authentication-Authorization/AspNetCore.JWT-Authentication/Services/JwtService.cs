@@ -23,7 +23,8 @@ public class JwtService : IJwtService
         {
             Claim[] claims = new[]
             {
-                new Claim(ClaimTypes.Email, email)
+                new Claim(ClaimTypes.Email, email),
+                new Claim(ClaimTypes.Gender, "male")
             };
 
             JwtSecurityToken token = new JwtSecurityToken(

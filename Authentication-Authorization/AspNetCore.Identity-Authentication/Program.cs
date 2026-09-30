@@ -15,8 +15,10 @@ namespace AspNetCore.Identity_Authentication
 
             builder.Services.AddAuthorization();
             builder.Services.AddAuthentication()
-                .AddCookie(IdentityConstants.ApplicationScheme)
-                .AddBearerToken(IdentityConstants.BearerScheme);
+                .AddCookie(IdentityConstants.ApplicationScheme);
+            //builder.Services.AddAuthentication()
+            //    .AddCookie(IdentityConstants.ApplicationScheme)
+            //    .AddBearerToken(IdentityConstants.BearerScheme);
             //builder.Services.AddAuthentication()
             //    .AddBearerToken(IdentityConstants.BearerScheme);
             //builder.Services.AddAuthentication()

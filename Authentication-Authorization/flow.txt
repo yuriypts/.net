@@ -1,0 +1,42 @@
+                 ┌──────────────────────┐
+                 │ Identity Provider    │
+                 │                      │
+                 │ Login                │
+                 │ MFA                  │
+                 │ OAuth/OIDC           │
+                 └──────────┬───────────┘
+                            │
+                       Access Token
+                            │
+                            ▼
+                     ┌─────────────┐
+                     │ ASP.NET API │
+                     └──────┬──────┘
+                            │
+                            ▼
+                    Authentication
+                            │
+                            ▼
+                    ClaimsPrincipal
+                            │
+               ┌────────────┴────────────┐
+               │                         │
+             Claims                    Identity
+               │
+               ▼
+          Authorization
+               │
+       ┌───────┼────────┐
+       │       │        │
+      Role   Policy   Permission
+       │       │        │
+       └───────┼────────┘
+               │
+               ▼
+            Resource
+               │
+               ▼
+          Business Rule
+               │
+               ▼
+             ALLOW

@@ -1,0 +1,184 @@
+HTTP
+ │
+ ├── Authentication
+ │      └── "Хто ти?"
+ │
+ ├── Claims
+ │      └── "Що ми знаємо про тебе?"
+ │
+ ├── Authorization
+ │      └── "Що тобі дозволено?"
+ │
+ ├── Authentication schemes
+ │      ├── Cookies
+ │      ├── JWT Bearer
+ │      ├── OpenID Connect
+ │      └── API Keys / custom schemes
+ │
+ ├── Identity
+ │      └── Users, passwords, roles, tokens, etc.
+ │
+ ├── OAuth 2.0
+ │      └── "Як отримати access token?"
+ │
+ ├── OpenID Connect
+ │      └── "Як автентифікувати користувача через Identity Provider?"
+ │
+ ├── JWT
+ │      └── Формат access token
+ │
+ └── Authorization
+        ├── Roles
+        ├── Claims
+        ├── Policies
+        └── Requirements / Handlers
+		
+		
+
+User
+ ├── Identity
+ │    ├── AuthenticationType = Bearer
+ │    ├── IsAuthenticated = true
+ │
+ └── Claims
+      ├── sub = 123
+      ├── email = john@example.com
+      ├── role = Admin
+      └── permission = orders.delete
+		
+		
+		
+		
+		
+ASP.NET Core отримує request.
+
+Приблизно:
+
+HTTP Request
+     │
+     ▼
+Authentication Middleware
+     │
+     ▼
+Authentication Scheme
+     │
+     ▼
+JWT validation
+     │
+     ├── signature valid?
+     ├── issuer valid?
+     ├── audience valid?
+     ├── expiration valid?
+     └── token valid?
+           │
+           ▼
+      ClaimsPrincipal
+           │
+           ▼
+      HttpContext.User
+           │
+           ▼
+ Authorization Middleware
+           │
+           ▼
+      Policy evaluation
+           │
+           ▼
+       Controller
+
+Це фундаментальна модель ASP.NET Core Security.
+
+
+
+
+
+ OAuth 2.0 — це якраз той самий стандартний протокол, за допомогою якого сторонні додатки безпечно "коннектяться" до Google API 
+ (наприклад, до Google Drive, Gmail, YouTube) або дозволяють вам входити на сайти через кнопку «Увійти через Google»
+
+OAuth 2.0
+
+Тут починається плутанина.
+
+OAuth 2.0 — це не authentication protocol у первинному сенсі.
+
+OAuth відповідає на питання:
+
+Як application отримує обмежений доступ до resource від імені user?
+
+Наприклад:
+
+Your application
+      │
+      │ "I need access to Google Calendar"
+      ▼
+Authorization Server
+      │
+      ▼
+Access Token
+      │
+      ▼
+Google API
+
+OAuth визначає authorization delegation.
+
+
+
+OpenID Connect
+Говорячи просто, OAuth 2.0 відповідає за авторизацію (доступ до даних), а OpenID Connect (OIDC) відповідає за автентифікацію (перевірку особи користувача).
+
+OIDC побудований поверх OAuth 2.0.
+
+Він додає:
+
+Authentication / identity layer.
+
+Тобто:
+
+OAuth 2.0
+    +
+Identity
+    =
+OpenID Connect
+
+Саме тому:
+
+OAuth != OIDC
+
+
+
+
+Refresh Token
+
+Access token часто короткоживучий:
+
+expires in 5–60 minutes
+
+Refresh token дозволяє отримати новий access token без повторного login.
+
+Access Token
+     │
+     ▼
+expires
+     │
+     ▼
+Refresh Token
+     │
+     ▼
+New Access Token
+
+Refresh tokens потребують особливої уваги до security.
+
+
+
+
+ASP.NET Core Identity — framework/library для management users:
+
+Users
+Passwords
+Roles
+Claims
+Email confirmation
+Password reset
+2FA
+Tokens
+Lockout
