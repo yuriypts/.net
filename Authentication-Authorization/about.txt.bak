@@ -171,7 +171,7 @@ Refresh tokens потребують особливої уваги до security.
 
 
 
-Identity — framework/library для management users:
+ASP.NET Core Identity — framework/library для management users:
 
 Users
 Passwords

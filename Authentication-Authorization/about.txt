@@ -182,3 +182,19 @@ Password reset
 2FA
 Tokens
 Lockout
+
+
+
+
+
+
+{
+  "email": "test@test.com",
+  "password": "test123A!"
+}
+
+
+{
+  "email": "test@test.com",
+  "password": "123"
+}
