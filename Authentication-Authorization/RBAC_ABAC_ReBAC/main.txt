@@ -1,0 +1,43 @@
+Architectural comparison
+The three approaches have different strengths.
+Feature							RBAC								ABAC						ReBAC
+Main 							concept	Roles						Attributes					Relationships
+Access decision					Role membership						Attribute evaluation		Relationship evaluation
+Resource-specific access		Limited without additional checks	Yes							Yes
+Dynamic conditions				Limited								Excellent					Excellent
+Team-based access				Requires additional logic			Possible					Natural
+Ownership						Usually additional logic			Possible					Natural
+Complexity						Low									Medium						Medium–High
+Typical use						Internal applications				Enterprise policies			Sharing and collaboration
+
+
+When should you use each?
+
+RBAC
+Use RBAC when your system has clear organizational roles.
+Examples:
+- Admin
+- Manager
+- Reader
+- Operator
+- Auditor
+RBAC is usually the simplest model to implement and maintain.
+
+ABAC
+Use ABAC when access depends on the resource's attributes or contextual conditions.
+Examples:
+- Employees can access documents in their department.
+- Documents can be accessed only during business hours.
+- A manager can approve transactions below a specific amount.
+- A user can access resources belonging to their tenant.
+ABAC is especially useful in enterprise systems with complex authorization rules.
+
+ReBAC
+Use ReBAC when access depends on ownership, sharing, membership, or other relationships.
+Examples:
+- Google Drive-like document sharing.
+- Project-based permissions.
+- Team access.
+- Resource ownership.
+- Hierarchical organization structures.
+ReBAC is particularly effective when users can share resources with other users or groups.
