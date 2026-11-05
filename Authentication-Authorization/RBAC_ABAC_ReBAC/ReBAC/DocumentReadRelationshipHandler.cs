@@ -43,9 +43,12 @@ public sealed class DocumentReadRelationshipHandler: AuthorizationHandler<Docume
                 Relations.Editor,
                 resource);
 
-        if (isOwner || isViewer || isEditor)
+        if (!(isOwner && isViewer && isEditor))
         {
-            context.Succeed(requirement);
+            return;
         }
+
+        context.Succeed(requirement);
+        return;
     }
 }

@@ -36,14 +36,17 @@ namespace RBAC_ABAC_ReBAC
                 });
             builder.Services.AddAuthorization(options =>
             {
+                // RBAC policies
                 options.AddPolicy(Permissions.DocumentsRead, policy => policy.RequireRole(AppRoles.Admin, AppRoles.Manager, AppRoles.Reader));
                 options.AddPolicy(Permissions.DocumentsUpdate, policy => policy.RequireRole(AppRoles.Admin, AppRoles.Manager));
-                
+
+                // ABAC policies
                 options.AddPolicy(Permissions.DocumentsApprove, policy => {
                     policy.RequireRole(AppRoles.Admin, AppRoles.Manager);
                     policy.AddRequirements(new DocumentReadRequirement());
                 });
 
+                // ReBAC policies
                 options.AddPolicy(Permissions.DocumentsDelete, policy =>
                 {
                     policy.RequireRole(AppRoles.Admin);
